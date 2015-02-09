@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E98DE05C-C988-4677-876C-5DE93606804D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ConcurrenteBaseDatos</RootNamespace>
+    <AssemblyName>ConcurrenteBaseDatos</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>colectivo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AcercaDeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AcercaDeForm.Designer.cs">
+      <DependentUpon>AcercaDeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDeDatos\Archivo.cs" />
+    <Compile Include="BaseDeDatos\BaseDatos.cs" />
+    <Compile Include="BaseDeDatos\ComponentesVisuales\ControladorTransaccionesView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseDeDatos\ComponentesVisuales\ControladorTransaccionesView.Designer.cs">
+      <DependentUpon>ControladorTransaccionesView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDeDatos\ComponentesVisuales\RegistroView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseDeDatos\ComponentesVisuales\RegistroView.Designer.cs">
+      <DependentUpon>RegistroView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDeDatos\ControladorTransaccion.cs" />
+    <Compile Include="BaseDeDatos\ControlConcurrencia\Condicion.cs" />
+    <Compile Include="BaseDeDatos\ControlConcurrencia\Condiciones\CondicionViaje.cs" />
+    <Compile Include="BaseDeDatos\ControlConcurrencia\Condiciones\CondicionPasaje.cs" />
+    <Compile Include="BaseDeDatos\ControlConcurrencia\Condiciones\CondicionPersona.cs" />
+    <Compile Include="BaseDeDatos\ControlConcurrencia\ControladorConcurrencia.cs" />
+    <Compile Include="BaseDeDatos\ControlConcurrencia\DescriptorBloqueo.cs" />
+    <Compile Include="BaseDeDatos\ControlConcurrencia\EntradaBloqueo.cs" />
+    <Compile Include="BaseDeDatos\ControlConcurrencia\TipoBloqueo.cs" />
+    <Compile Include="BaseDeDatos\Excepciones\AbortarEsperarMorirException.cs" />
+    <Compile Include="BaseDeDatos\Excepciones\TransaccionNoAbortadaException.cs" />
+    <Compile Include="BaseDeDatos\Excepciones\LimiteCantidadTransaccionesException.cs" />
+    <Compile Include="BaseDeDatos\ModeloDatos\DiasSemana.cs" />
+    <Compile Include="BaseDeDatos\Registros\EntradaAbort.cs" />
+    <Compile Include="BaseDeDatos\Registros\EntradaInicio.cs" />
+    <Compile Include="BaseDeDatos\Registros\EntradaCommit.cs" />
+    <Compile Include="BaseDeDatos\Registros\EntradaTransaccionRegistro.cs" />
+    <Compile Include="BaseDeDatos\Registros\EntradaCheckpoint.cs" />
+    <Compile Include="BaseDeDatos\Tabla.cs" />
+    <Compile Include="BaseDeDatos\Tupla.cs" />
+    <Compile Include="BaseDeDatos\Registros\EntradaEscribir.cs" />
+    <Compile Include="BaseDeDatos\Transaccion.cs" />
+    <Compile Include="BuscarPersona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarPersona.Designer.cs">
+      <DependentUpon>BuscarPersona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComponentesVisuales\ColectivoControls.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ComponentesVisuales\ColectivoControls.Designer.cs">
+      <DependentUpon>ColectivoControls.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComponentesVisuales\PersonaView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ComponentesVisuales\PersonaView.Designer.cs">
+      <DependentUpon>PersonaView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComponentesVisuales\ReservaView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ComponentesVisuales\ReservaView.Designer.cs">
+      <DependentUpon>ReservaView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComponentesVisuales\ViajeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ComponentesVisuales\ViajeView.Designer.cs">
+      <DependentUpon>ViajeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Servicios\AsientoNoExistenteException.cs" />
+    <Compile Include="Servicios\PersonaConDniYaExisteException.cs" />
+    <Compile Include="Servicios\IPasajeService.cs" />
+    <Compile Include="Servicios\PasajeEstabaReservadoException.cs" />
+    <Compile Include="Servicios\PasajeServicio.cs" />
+    <Compile Include="Servicios\PersonaServicio.cs" />
+    <Compile Include="Servicios\IPersonaService.cs" />
+    <Compile Include="Servicios\IViajeService.cs" />
+    <Compile Include="Servicios\ViajeEliminadoException.cs" />
+    <Compile Include="Servicios\ViajeServicio.cs" />
+    <Compile Include="VentanaMultiplesReservas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaMultiplesReservas.Designer.cs">
+      <DependentUpon>VentanaMultiplesReservas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaPrincipal.Designer.cs">
+      <DependentUpon>VentanaPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseDeDatos\ModeloDatos\Pasaje.cs" />
+    <Compile Include="BaseDeDatos\ModeloDatos\Persona.cs" />
+    <Compile Include="BaseDeDatos\ModeloDatos\Tablas\TablaPasaje.cs" />
+    <Compile Include="BaseDeDatos\ModeloDatos\Tablas\TablaPersona.cs" />
+    <Compile Include="BaseDeDatos\ModeloDatos\Tablas\TablaViaje.cs" />
+    <Compile Include="FormularioDebug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioDebug.Designer.cs">
+      <DependentUpon>FormularioDebug.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BaseDeDatos\ModeloDatos\Viaje.cs" />
+    <Compile Include="BaseDeDatos\Registros\EntradaRegistro.cs" />
+    <Compile Include="BaseDeDatos\Registros\Registro.cs" />
+    <Compile Include="VentanaViaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaViaje.Designer.cs">
+      <DependentUpon>VentanaViaje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaPersona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaPersona.Designer.cs">
+      <DependentUpon>VentanaPersona.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AcercaDeForm.resx">
+      <DependentUpon>AcercaDeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseDeDatos\ComponentesVisuales\ControladorTransaccionesView.resx">
+      <DependentUpon>ControladorTransaccionesView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseDeDatos\ComponentesVisuales\RegistroView.resx">
+      <DependentUpon>RegistroView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuscarPersona.resx">
+      <DependentUpon>BuscarPersona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComponentesVisuales\ColectivoControls.resx">
+      <DependentUpon>ColectivoControls.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComponentesVisuales\PersonaView.resx">
+      <DependentUpon>PersonaView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComponentesVisuales\ReservaView.resx">
+      <DependentUpon>ReservaView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComponentesVisuales\ViajeView.resx">
+      <DependentUpon>ViajeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaMultiplesReservas.resx">
+      <DependentUpon>VentanaMultiplesReservas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaPrincipal.resx">
+      <DependentUpon>VentanaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioDebug.resx">
+      <DependentUpon>FormularioDebug.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="VentanaViaje.resx">
+      <DependentUpon>VentanaViaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaPersona.resx">
+      <DependentUpon>VentanaPersona.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="colectivo.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
